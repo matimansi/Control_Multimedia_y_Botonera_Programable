@@ -7,4 +7,4 @@ El proyecto se basa en la realización de un producto el cual puede controlar la
 
 ## ¿Que se encuentra en el Repositorio?
 
-En el respositorio se pueden encontrar los codigos desarrollados para el ESP32, el cual es el encargado de enviar la informacion a la computadora, y los programas de Python, los cuales se encargan de realizar las debidas acciones en la computadora.
+En el respositorio se pueden encontrar los codigos desarrollados para el Arduino NANO, el cual es el encargado de enviar la informacion a la computadora, y los programas de Python, los cuales se encargan de realizar las debidas acciones en la computadora.
