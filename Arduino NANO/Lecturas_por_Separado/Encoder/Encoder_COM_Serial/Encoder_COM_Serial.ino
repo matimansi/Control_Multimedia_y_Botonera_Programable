@@ -1,6 +1,6 @@
-#define DT 22
-#define CLK 23
-#define BOTON_ENCODER 21
+#define DT 4
+#define CLK 2
+#define BOTON_ENCODER 3
 #define TIEMPO_ESPERA 500
 
 bool old_clk;

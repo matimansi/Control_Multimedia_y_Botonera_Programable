@@ -27,8 +27,8 @@
 */
 
 #define BOTON_MULTIMEDIA_1 13
-#define BOTON_MULTIMEDIA_2 12
-#define BOTON_MULTIMEDIA_3 11
+#define BOTON_MULTIMEDIA_2 6
+#define BOTON_MULTIMEDIA_3 5
 #define CANT_BOTONES_MULTIMEDIA 3
 
 /*
@@ -41,19 +41,19 @@
     DECLARACION MATRIZ DE BOTONES MACRO
 */
 
-const byte ROWS = 2;
-const byte COLS = 4;
+const byte FILAS = 2;
+const byte COLUMNAS = 4;
 
-char keys[ROWS][COLS] = 
+char macros[FILAS][COLUMNAS] =
 {
     {'1', '2', '3', '4'},
     {'5', '6', '7', '8'}
 };
 
-byte rowPins[ROWS] = {10, 9};
-byte colPins[COLS] = {8, 7, 6, 5};
+byte pines_filas[FILAS] = {8, 7};
+byte pines_columnas[COLUMNAS] = {9, 10, 11, 12};
 
-Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+Keypad matriz_macros = Keypad(makeKeymap(macros), pines_filas, pines_columnas, FILAS, COLUMNAS);
 
 /*
     VARIABLES GLOBALES
@@ -120,7 +120,7 @@ void loop()
     botones_macros();
 
     com_botones_multimedia();
-
+    
     if ((millis() - tiempo_actual) > TIEMPO_INFO)
     {
         volumen[0] = lectura_pote_1();
@@ -174,12 +174,11 @@ void boton_encoder_interrup(void)
 
 void botones_macros (void)
 {
-    char key = keypad.getKey();
-    if (key)
+    char boton_macro = matriz_macros.getKey();
+    if (boton_macro)
     {
-        Serial.print("boton_macro_");
-        Serial.print(key);
-        Serial.println("");
+        Serial.print("macro_");
+        Serial.println(boton_macro);
     }
 }
 

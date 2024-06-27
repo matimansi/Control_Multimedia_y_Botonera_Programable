@@ -1,7 +1,7 @@
-#define POTE_1 13
-#define POTE_2 14
-#define POTE_3 27
-#define POTE_4 26
+#define POTE_1 A0
+#define POTE_2 A1
+#define POTE_3 A2
+#define POTE_4 A3
 
 float lectura_pote_1(void);
 float lectura_pote_2(void);
@@ -20,11 +20,13 @@ void setup()
 void loop()
 {
 	float volumen_1, volumen_2, volumen_3, volumen_4;
+    
 	volumen_1 = lectura_pote_1();
 	volumen_2 = lectura_pote_2();
 	volumen_3 = lectura_pote_3();
 	volumen_4 = lectura_pote_4();
-	Serial.print(volumen_1);
+
+    Serial.print(volumen_1);
 	Serial.print("-");
 	Serial.print(volumen_2);
 	Serial.print("-");
@@ -76,7 +78,6 @@ float lectura_pote_4(void)
 float conversor_lectura_volumen(float x)
 {
 	float volumen;
-	volumen = (x * 100) / 4095;
-	volumen /= 100;
+	volumen = x / 1023;
 	return volumen;
 }

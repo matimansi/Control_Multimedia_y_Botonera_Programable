@@ -7,6 +7,9 @@ def subir_volumen():
 def bajar_volumen():
     keyboard.send("volume_down")
 
+def mutear():
+    keyboard.send("D")
+
 def play_pause():
     keyboard.send('G')
 
@@ -25,7 +28,8 @@ while True:
         subir_volumen()
     elif esp_leido == "-1":
         bajar_volumen()
-    elif esp_leido == "BOTON":
-        play_pause()
+    elif esp_leido == "boton_encoder":
+        mutear()
+        #play_pause()
         #cancion_sig()
         #cancion_ant()
