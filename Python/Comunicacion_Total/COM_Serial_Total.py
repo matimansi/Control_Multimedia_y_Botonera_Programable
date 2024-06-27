@@ -28,7 +28,7 @@ def macro_5():
 	keyboard.press_and_release('win+5')
 
 def macro_6():
-	keyboard.press_and_release('win+6')
+	keyboard.press_and_release('win+8')
 
 def macro_7():
 	subprocess.Popen([ruta_vscode])
@@ -100,22 +100,9 @@ while True:
 		play_pause()
 	elif esp_leido == "boton_multimedia_3":
 		cancion_sig()
-	elif esp_leido == "macro_1":
-		macro_1()
-	elif esp_leido == "macro_2":
-		macro_2()
-	elif esp_leido == "macro_3":
-		macro_3()
-	elif esp_leido == "macro_4":
-		macro_4()
-	elif esp_leido == "macro_5":
-		macro_5()
-	elif esp_leido == "macro_6":
-		macro_6()
-	elif esp_leido == "macro_7":
-		macro_7()
-	elif esp_leido == "macro_8":
-		macro_8()
+	elif "macro_" in esp_leido:
+		if esp_leido in macros:
+			macros[esp_leido]()
 	else:
 		vol = ["", "", "", ""]
 		elementos = esp_leido.split("-")
